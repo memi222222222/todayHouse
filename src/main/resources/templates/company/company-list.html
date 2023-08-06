@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<style>
+	.search-container{
+		position: relative;
+	}
+	
+	.search{
+		width: 100%;
+		height: 50px;
+		margin-bottom: 30px;
+		border: 1px solid black;
+		border-radius: 50px;
+	}
+	
+	.search-button {
+		display: block;
+		height: 50px;
+		color: #00bdfe;
+		font-size: 23px;
+		position: absolute;
+		top: 0;
+		right: 20px;
+		line-height: 50px;
+	}
+	
+	.search-button:hover{
+		cursor: pointer;
+	}
+   
+
+	.nav_wrap{
+		overflow: hidden;
+		height: 60px;
+		line-height: 60px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid rgb(211, 211, 211);
+		border-top: 1px solid rgb(211, 211, 211);
+	}
+	
+	.residental{
+		float: left;
+		height: 100%;
+		font-size: 18px;
+		font-weight: 550;
+		padding: 0 20px;
+	}
+	
+	.residental:hover{
+		border-bottom: 2px solid #00bdfe;
+		color:#00bdfe;
+		cursor: pointer;
+	}
+	
+	.commercial{
+		float: left;
+		height: 100%;
+		font-size: 18px;
+		font-weight: 550;
+		padding: 0 20px;
+	}
+	
+	.commercial:hover{
+		border-bottom: 2px solid #00bdfe;
+		color:#00bdfe;
+		cursor: pointer;
+	}
+	
+	.apartment{
+		float: left;
+		height: 100%;
+		font-size: 18px;
+		font-weight: 550;
+		padding: 0 20px;
+	}
+	
+	.apartment:hover{
+		border-bottom: 2px solid #00bdfe;
+		color:#00bdfe;
+		cursor: pointer;
+	}
+	
+	.waiting-item {
+		margin-bottom: 40px;
+	}
+	
+	.waiting-item:hover {
+		cursor: pointer;
+	}
+	
+	.down-content {
+		height: 200px;
+	}
+	
+	.down-content:hover {
+		cursor: pointer;
+	}
+	
+	.list-content {
+		word-wrap : break-word;
+		text-align : left;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow : hidden;
+		text-overflow : ellipsis;
+	}
+</style>
+ 
+<th:block th:replace="~{./include/layout :: setContent( ~{:: #bodyContainer})}">
+
+
+<div id ="bodyContainer">
+
+  <section class="contest-waiting">
+    <div class="container">
+      <div class="row">
+		<!-- 네비게이션바 -->
+		<div class="col-lg-12">
+			<div class="nav_wrap">
+				<div class="residental">
+					<span>주거공간시공</span>
+				</div>
+				<div class="commercial">
+					<span>상업공간시공</span>
+				</div>
+				<div class="apartment">
+					<span>아파트시공</span>
+				</div>
+			</div>
+        </div>
+        <!-- 검색 -->
+        <div class="col-lg-12">
+			<div class="search-container">
+				<input type="text" placeholder="시공지 주소로 변경해주세요" class="search">
+				<a class="search-button"><i class="fa fa-search"></i></a>
+			</div>
+        </div>
+        <!-- 리스트 -->
+        <div class="col-lg-3 col-sm-6">
+          <div class="waiting-item">
+            <img src="../assets/images/waiting-01.jpg" alt="">
+            <div class="down-content">
+              <h4 class="list-title">라이크디자인(상업)</h4>
+              <p class="list-star"><i class="fa fa-star"></i> 4.8 계약자리뷰 7 최근계약 1</p>
+              <div class="list-content-wrap">
+				  <p class="list-content">고객님의 니즈에 맞는 디자인과 깔끔한 마감을 추구합니다:)ssssssssssssssssssssssssssssss</p>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="waiting-item">
+            <img src="../assets/images/waiting-01.jpg" alt="">
+            <div class="down-content">
+              <h4 class="list-title">라이크디자인(상업)</h4>
+              <p class="list-star"><i class="fa fa-star"></i> 4.8 계약자리뷰 7 최근계약 1</p>
+              <div class="list-content-wrap">
+				  <p class="list-content">고객님의 니즈에 </p>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="waiting-item">
+            <img src="../assets/images/waiting-01.jpg" alt="">
+            <div class="down-content">
+              <h4 class="list-title">라이크디자인(상업)</h4>
+              <p class="list-star"><i class="fa fa-star"></i> 4.8 계약자리뷰 7 최근계약 1</p>
+              <div class="list-content-wrap">
+				  <p class="list-content">고객님의 니즈에 </p>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="waiting-item">
+            <img src="../assets/images/waiting-01.jpg" alt="">
+            <div class="down-content">
+              <h4 class="list-title">라이크디자인(상업)</h4>
+              <p class="list-star"><i class="fa fa-star"></i> 4.8 계약자리뷰 7 최근계약 1</p>
+              <div class="list-content-wrap">
+				  <p class="list-content">고객님의 니즈에 </p>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="waiting-item">
+            <img src="../assets/images/waiting-01.jpg" alt="">
+            <div class="down-content">
+              <h4 class="list-title">라이크디자인(상업)</h4>
+              <p class="list-star"><i class="fa fa-star"></i> 4.8 계약자리뷰 7 최근계약 1</p>
+              <div class="list-content-wrap">
+				  <p class="list-content">고객님의 니즈에 </p>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <ul class="pagination">
+            <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+</th:block>
+</html>

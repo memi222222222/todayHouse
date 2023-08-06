@@ -39,7 +39,23 @@ public class CpController {
       return "redirect:/";
    }
 	
+   @GetMapping("/cp_list")
+   public String cp_list() {
+      return "/company/company-list";
+   }
 	
 	
-	
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 }
