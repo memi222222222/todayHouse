@@ -1,0 +1,22 @@
+create table houseopen (
+	house_num INT PRIMARY KEY auto_increment,
+    house_type varchar(30) not null,
+    house_size varchar(30) not null,
+    house_adr varchar(30) not null,
+    house_fam varchar(30) not null,
+    house_remo varchar(30) not null,
+    house_title varchar(100) not null,
+    house_content varchar(5000) not null,
+    house_regdate datetime default now(),
+    user_id varchar(30) not null
+    
+);
+
+create table houseopen_upload (
+   upload_num INT PRIMARY KEY auto_increment,
+    filename varchar(100) not null,
+   filepath varchar(100) not null, ##폴더명
+   uuid varchar(50) not null, ##UUID명
+   regdate timestamp default now(),
+    house_num int
+);
