@@ -2008,38 +2008,39 @@ Contest Details Page
 }
 
 .contest-waiting .waiting-item img {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 10px;
+  border-radius: 10px;
 }
 
 .contest-waiting .waiting-item .down-content {
-  background-color: #f7f7f7;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  background-color: white;
   padding: 25px;
+  text-align: center;
 }
 
 .contest-waiting .waiting-item .down-content h4 {
-  font-size: 15px;
-  color: #00bdfe;
-  font-weight: 700;
-  margin-bottom: 22px;
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .contest-waiting .waiting-item .down-content p {
   line-height: 20px;
-  margin-bottom: 20px;
+  font-size: 13px;
+  margin-bottom: 7px;
 }
 
 .contest-waiting .waiting-item .down-content span.price,
 .contest-waiting .waiting-item .down-content span.deadline {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   color: #afafaf;
 }
 
 .contest-waiting .waiting-item .down-content span.deadline {
   float: right;
+  margin-right: 15px;
 }
 
 .contest-waiting .waiting-item .down-content span.price em,
@@ -2079,6 +2080,99 @@ Contest Details Page
 .contest-waiting ul.pagination li:first-child a {
   border-color: transparent;
 }
+/*============================================================*/
+/*-----내가 작성--------*/
+/*============================================================*/
+.houseOpen_row {
+	margin-bottom: 30px;
+}
+
+.filter_li {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+}
+
+.filter_btn {
+    background-color: rgb(238, 238, 238);
+    border: none;
+    color: rgb(93, 93, 93);
+    font-weight: 800;
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.filter_choice {
+	
+
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    display: none;
+    
+}
+
+
+.filter_choice > li {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	font-weight: 500;
+	
+}
+
+.filter_choice > li:hover {
+	background-color: rgb(183, 232, 255);
+}
+
+.write_btn {
+	float: right;
+}
+.write_btn > a {
+	font-weight: 800;
+}
+.erase {
+	background-color: rgb(202, 220, 234);
+	text-decoration: none;
+	color: rgb(86, 99, 114);
+	width: 100px;
+}
+.select_btn > li {
+	width: 145px;
+	padding-left: 5px;
+	
+	font-size: 15px;
+	margin-left: 5px;
+	border-radius: 20px;
+	background-color: #00bbff;
+	color: white;
+	float: left;
+}
+.select_btn > li > a {
+	text-decoration: none;
+	color: white;
+}
+
+
+.xxx {
+	display: inline;
+	background-color: #00bbff;
+	border-radius: 50px;
+	width: 17px;
+	float: right;
+	font-size: 15px;
+	color: white;
+}
+
 
 
 

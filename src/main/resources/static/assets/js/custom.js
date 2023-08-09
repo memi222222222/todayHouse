@@ -100,7 +100,7 @@
      }
    };
 
-   (function() {
+  /* (function() {
      // Initiate all instances on the page
      const accordions = document.getElementsByClassName("accordions");
      for (let i = 0; i < accordions.length; i++) {
@@ -138,7 +138,7 @@
       },1000);
      }
      initializeClock(((new Date()).getFullYear()+1) + "/1/1")
-   })()
+   })()*/
 
    var context;
    var $window = $(window);
@@ -434,6 +434,121 @@
             });
         }
     })
+    
+  /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*지유가 작성한 jquery*/
+  /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    
+    $(".filter_li").mouseenter(function(event) {
+  	  $(event.currentTarget).find(".filter_choice").show();
+		
+	})
+	
+	$(".filter_li").mouseleave(function(event) {
+		$(event.currentTarget).find(".filter_choice").hide();
+	})
+	
+
+	
+	$(".filter_choice > li").click(function() {
+		let house_type = $("#house_type").val();
+		let house_size = $("#house_size").val();
+		let house_adr = $("#house_adr").val();
+		let house_fam = $("#house_fam").val();
+		let house_remo = $("#house_remo").val();
+
+		if($(event.currentTarget).parent().prev().html() == "주거형태") {
+			house_type = $(event.currentTarget).children().html();
+		} else if($(event.currentTarget).parent().prev().html() == "평수") {
+			house_size = $(event.currentTarget).children().html();
+		} else if($(event.currentTarget).parent().prev().html() == "지역") {
+			house_adr = $(event.currentTarget).children().html();
+		} else if($(event.currentTarget).parent().prev().html() == "가족형태") {
+			house_fam = $(event.currentTarget).children().html();
+		} else {
+			house_remo = $(event.currentTarget).children().html();
+		}
+		
+		
+		let currentUrl = "../houseopen/houseopenList" + "?" + "house_type" + "=" + house_type + "&" + "house_size" + "=" + house_size + "&" + "house_adr" + "=" + house_adr + "&" + "house_fam" + "=" + house_fam + "&" + "house_remo" + "=" + house_remo;
+		console.log(currentUrl);
+		$(event.target).closest("li").children().attr("href", currentUrl);
+		
+	})
+	
+	$(".select_btn > li").click(function() {
+		console.log($(event.currentTarget).closest("li").hasClass("select_type"));
+		console.log($(event.currentTarget));
+		console.log($(event.target));
+		let house_type = $("#house_type").val();
+		let house_size = $("#house_size").val();
+		let house_adr = $("#house_adr").val();
+		let house_fam = $("#house_fam").val();
+		let house_remo = $("#house_remo").val();
+		
+		if($(event.currentTarget).closest("li").hasClass("select_type")) {
+			house_type = "";
+		} else if($(event.currentTarget).closest("li").hasClass("select_adr")) {
+			house_adr = "";
+		} else if($(event.currentTarget).closest("li").hasClass("select_size")) {
+			house_size = "";
+		} else if($(event.currentTarget).closest("li").hasClass("select_fam")) {
+			house_fam = "";
+		} else if($(event.currentTarget).closest("li").hasClass("select_remo")) {
+			house_remo = "";
+		}
+		
+		let currentUrl = "../houseopen/houseopenList" + "?" + "house_type" + "=" + house_type + "&" + "house_size" + "=" + house_size + "&" + "house_adr" + "=" + house_adr + "&" + "house_fam" + "=" + house_fam + "&" + "house_remo" + "=" + house_remo;
+		console.log(currentUrl);
+		$(event.target).closest("li").children().attr("href", currentUrl);
+		
+	})
+	
+	//파일업로드
+$(document).ready(function() {
+	var fileTarget = $('.title_content .upload_main_file'); //jquery는 다중 태그이벤트도 한번에 처리
+	
+	fileTarget.on('change', function(){ //change이벤트
+	if(window.FileReader){ // modern browser 
+		var filename = $(this)[0].files[0].name; 
+		} 
+	else { // old IE 
+		var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+	} // 추출한 파일명 삽입 
+	$(this).siblings('.upload_name').val(filename); });
+
+	var imgTarget = $('.preview_image .upload_main_file'); 
+	imgTarget.on('change', function() { 
+		var parent = $(this).parent(); 
+		
+		if(window.FileReader){ //image 파일만 
+			if (!$(this)[0].files[0].type.match(/image\//)) return; 
+			var reader = new FileReader(); 
+			reader.onload = function(e){ 
+				var src = e.target.result; 
+				//parent.find(".file_midBox").children().attr("src", src);
+				//if(parent.find(".photo").attr("src") != undefined) {
+					
+				parent.find(".file_midBox").find("img").attr("src", src);
+			/*	} else {
+					
+				parent.find(".photos").append('<img style="width: 60%;" src="'+src+'" class="upload-thumb">');
+				}*/
+				
+			} 
+			reader.readAsDataURL($(this)[0].files[0]); 
+		} else { 
+			$(this)[0].select(); 
+			$(this)[0].blur(); 
+			var imgSrc = document.selection.createRange().text; 
+			parent.prepend('<div class="upload_display"><div class="file_midBox"><img class="upload_img"></div></div>'); 
+
+			var img = $(this).siblings('.upload_display').find('img'); 
+			img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")"; 
+		} 
+	});
+
+});
 
 
 })(window.jQuery);
