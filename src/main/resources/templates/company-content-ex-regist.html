@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<style>
+	.regist-wrap {
+		margin-top: 150px;
+	}
+
+	.contain {
+		max-width: 600px;
+		margin: 50px auto;
+		padding: 20px;
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	h1 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	form label {
+		display: block;
+		margin-bottom: 8px;
+		font-weight: bold;
+	}
+
+	input[type="text"],
+	textarea,
+	input[type="file"] {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+
+	button {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		background-color: #3498db;
+		color: #fff;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	button:hover {
+		background-color: #2980b9;
+	}
+
+	textarea {
+		width: 100%;
+		height: 200px;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		resize: none;
+		overflow: auto;
+	}
+</style>
+<th:block th:replace="~{./include/layout :: setContent( ~{:: #company-content-ex-regist})}">
+
+	<div id="company-content-ex-regist">
+		<div class="regist-wrap">
+			<div class="contain">
+				<h1>시공사 사례 등록</h1>
+				<form action="cp_content_ex_regist" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="cp_id" th:value="${session.cpname}">
+					<label for="title">글 제목:</label>
+					<input type="text" id="title" name="cp_ex_title" required>
+
+					<label for="content">글 내용:</label>
+					<textarea id="content" name="cp_ex_content" rows="6" required></textarea>
+
+					<label for="image">이미지 업로드:</label>
+					<!--<input type="file" id="image" name="image" accept="image/*" required>-->
+
+					<button type="submit" id="subbtn">등록</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</th:block>
+<script>
+	if ('[[${msg}]]' != '') {
+		alert('[[${msg}]]');
+	}
+
+	document.querySelector("#subbtn").addEventListener("click", function (event) {
+		if (!confirm("정말 등록하시겠습니까?")) {
+			event.preventDefault(); // 등록을 취소하여 폼 제출을 막음
+		}
+	});
+
+</script>
+
+</html>
